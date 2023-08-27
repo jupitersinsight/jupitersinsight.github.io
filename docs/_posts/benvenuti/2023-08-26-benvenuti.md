@@ -2,7 +2,7 @@
 title: Benvenuto!
 layout: page
 subtitle: Primo post del mio blog personale
-background: 'img/bg-post.jpg'
+background: '/img/bg-post.jpg'
 ---
 
 # Primo post, ovviamente di benvenuto!
