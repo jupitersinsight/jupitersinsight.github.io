@@ -11,7 +11,7 @@ I due firewall sono connessi allo stesso router che per semplificazione si assum
 
 ## Topologia
 
-<img src="/assets/fortinet/site2site.JPG" alt="Topologia lab">
+<img src="/assets/fortinet/site2site.JPG" alt="Topologia lab" width="95%" height="auto" >
 
 ## Configurazione del router "ISP"
 
@@ -440,7 +440,7 @@ Cliccando il pulsante **Edit** è possibile modificare la configurazione.
 
 <img src="/assets/fortinet/site2site-psk/tunnel1.JPG" alt="Tunnel1 lab" width="95%" height="auto">  
 
-<img src="/assets/fortinet/site2site-psk/tunnel2.JPG" alt="Tunnel2 lab" width="auto" height="80%">
+<img src="/assets/fortinet/site2site-psk/tunnel2.JPG" alt="Tunnel2 lab" width="95%" height="auto">
 
 Elenco eventi relativi alle VPN (troubleshoot) accessibile da **Log & report** >> **Events** >> **VPN Events**.  
 
