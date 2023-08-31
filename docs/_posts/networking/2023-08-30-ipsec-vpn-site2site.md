@@ -11,7 +11,7 @@ I due firewall sono connessi allo stesso router che per semplificazione si assum
 
 ## Topologia
 
-<img src="/assets/fortinet/site2site.jpg" alt="Topologia lab">
+<img src="/assets/fortinet/site2site.JPG" alt="Topologia lab">
 
 ## Configurazione del router "ISP"
 
@@ -425,26 +425,26 @@ Prendiamo in esame il FortiGate HQ.
 
 Prima di tutto vediamo le policy inbound e outbound, e la policy di default che nega tutto il traffico.  
 
-<img src="/assets/fortinet/site2site-psk/policy.jpg" alt="Policy lab" width="95%" height="auto">
+<img src="/assets/fortinet/site2site-psk/policy.JPG" alt="Policy lab" width="95%" height="auto">
 
 Qui invece vediamo gli _indirizzi_ e i _gruppi di indirizzi_.  
 
-<img src="/assets/fortinet/site2site-psk/oggetti+gruppi.jpg" alt="Indirizzi e gruppi lab" width="95%" height="auto">
+<img src="/assets/fortinet/site2site-psk/oggetti+gruppi.JPG" alt="Indirizzi e gruppi lab" width="95%" height="auto">
 
 Le rotte statiche
 
-<img src="/assets/fortinet/site2site-psk/rotte.jpg" alt="Rotte lab" width="95%" height="auto">
+<img src="/assets/fortinet/site2site-psk/rotte.JPG" alt="Rotte lab" width="95%" height="auto">
 
 Il tunnel IPSec e la configurazione.  
 Cliccando il pulsante **Edit** è possibile modificare la configurazione.  
 
-<img src="/assets/fortinet/site2site-psk/tunnel1.jpg" alt="Tunnel1 lab" width="95%" height="auto">  
+<img src="/assets/fortinet/site2site-psk/tunnel1.JPG" alt="Tunnel1 lab" width="95%" height="auto">  
 
-<img src="/assets/fortinet/site2site-psk/tunnel2.jpg" alt="Tunnel2 lab" width="auto" height="80%">
+<img src="/assets/fortinet/site2site-psk/tunnel2.JPG" alt="Tunnel2 lab" width="auto" height="80%">
 
 Elenco eventi relativi alle VPN (troubleshoot) accessibile da **Log & report** >> **Events** >> **VPN Events**.  
 
-<img src="/assets/fortinet/site2site-psk/eventi-vpn.jpg" alt="Eventi VPN lab" width="95%" height="auto">
+<img src="/assets/fortinet/site2site-psk/eventi-vpn.JPG" alt="Eventi VPN lab" width="95%" height="auto">
 
 
 ## Comandi per il troubleshooting
