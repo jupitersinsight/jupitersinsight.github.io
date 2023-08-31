@@ -3,6 +3,7 @@ title: Benvenuto!
 layout: page
 subtitle: Primo post del mio blog personale
 background: '/img/bg-post.jpg'
+category: Benvenuto
 ---
 
 # Primo post, ovviamente di benvenuto!
