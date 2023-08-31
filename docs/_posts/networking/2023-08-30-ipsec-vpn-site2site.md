@@ -15,7 +15,7 @@ I due firewall sono connessi allo stesso router che per semplificazione si assum
 
 ## Configurazione del router "ISP"
 
-Il router che chiameremo "ISP" ha due interfacce configurate ognugna con il proprio indirizzamento:
+Il router che chiameremo "ISP" ha due interfacce configurate ognuna con il proprio indirizzamento:
 
 ```
 GigabitEthernet2/0         188.255.255.1   YES manual up                    up
