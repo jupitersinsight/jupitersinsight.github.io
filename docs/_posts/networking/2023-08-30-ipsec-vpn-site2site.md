@@ -93,9 +93,9 @@ Le informazioni **devono** corrispondere per entrambi i peer.
 
 In questo laboratorio usiamo l'autenticazione basata su _pre-shared key_.  
 
-Il valore SA (Security Association) della _phase1_ che prende il nome di IKE SA serve come scritto sopra per stabilire una sessione criptata per lo scambio dei valori SA della _phase2_, IPSEC SA, che contiene le informazioni per criptare e descriptare il traffico dati.  
+Il valore SA (Security Association) della _phase1_ che prende il nome di IKE SA serve come scritto sopra per stabilire una sessione criptata per lo scambio dei valori SA della _phase2_, IPSEC SA, che contiene le informazioni per criptare e decriptare il traffico dati.  
 
-Gli IKE SA sono rinegoziati in base al valore `keylife` che identifica in secondi la sua vita massima. Per quanto riguarda invece gli IPSEC SA, il la vita massima può essere specificata in secondi, volume del traffico criptato/decriptato o entrambi.  
+Gli IKE SA sono rinegoziati in base al valore `keylife` che identifica in secondi la sua vita massima. Per quanto riguarda invece gli IPSEC SA, la vita massima può essere specificata in secondi, volume del traffico criptato/decriptato o entrambi.  
 
 ```
 HQ # show vpn ipsec phase1-interface
@@ -129,7 +129,7 @@ end
 
 **Configurazione rotte statiche**
 
-Affinchè il traffico fluisca tra le due subnet è necessario configurare manualmente le rotte statiche tra le estremità del tunnel (non necessario nel caso di topologie VPN mesh o che fanno uso di protocolli di routing dinamici).  
+Affinché il traffico fluisca tra le due subnet è necessario configurare manualmente le rotte statiche tra le estremità del tunnel (non necessario nel caso di topologie VPN mesh o che fanno uso di protocolli di routing dinamici).  
 
 La **policy 3** è necessaria al fine di evitare che il traffico IPSEC utilizzi la rotta di default quando il tunnel non è attivo.
 
@@ -150,9 +150,9 @@ end
 ```
 **Configurazione delle policy**
 
-Quanto fatto finora è sufficiente affinché il tunnel funzioni ma senza le adeguate policy per il traffico dati, la comunicazione tra le subnet attraverso il tunnel è di default dal firewall: qualsiasi tentativo di comunicazione tra 192.168.188.0/24 e 192.168.88.0/24 è negato dalla policy implicita con id 0, **Implict deny**.
+Quanto fatto finora è sufficiente affinché il tunnel funzioni ma senza le adeguate policy per il traffico dati, la comunicazione tra le subnet attraverso il tunnel è bloccato di default dal firewall: qualsiasi tentativo di comunicazione tra 192.168.188.0/24 e 192.168.88.0/24 è negato dalla policy implicita con id 0, **Implict deny**.
 
-Procediamo quindi alla creazione prima di un oggetto che identifica l'indirizzo/subnet a cui poi vogliamo fare riferimento.
+Procediamo quindi alla creazione di un oggetto/alias che identifica l'indirizzo/subnet a cui poi faremo riferimento.
 
 ```
 HQ # show firewall address
@@ -169,7 +169,7 @@ config firewall address
 end
 ```
 
-Aggiungiamo gli oggetti a dei gruppi in modo da rendere più agevole una eventuale aggiunta o rimozione di subnet dalle policy.
+Aggiungiamo gli oggetti a dei gruppi in modo da rendere più agevole un'eventuale aggiunta o rimozione di subnet dalle policy.
 
 ```
 HQ # show firewall addrgrp
@@ -251,7 +251,7 @@ config system interface
 end
 ```
 
-Configurazione DHCP per client LAN 192.168.88.0/24.
+Configurazione DHCP per client della LAN 192.168.88.0/24.
 
 ```
 Branch # show system dhcp server
@@ -270,6 +270,7 @@ config system dhcp server
     next
 end
 ```
+
 **Configurazione profilo VPN**
 
 ```
@@ -431,18 +432,18 @@ Qui invece vediamo gli _indirizzi_ e i _gruppi di indirizzi_.
 
 <img src="/assets/fortinet/site2site-psk/oggetti+gruppi.JPG" alt="Indirizzi e gruppi lab" width="95%" height="auto">
 
-Le rotte statiche
+Le rotte statiche.
 
 <img src="/assets/fortinet/site2site-psk/rotte.JPG" alt="Rotte lab" width="95%" height="auto">
 
-Il tunnel IPSec e la configurazione.  
+Il tunnel IPSec e la sua configurazione.  
 Cliccando il pulsante **Edit** è possibile modificare la configurazione.  
 
 <img src="/assets/fortinet/site2site-psk/tunnel1.JPG" alt="Tunnel1 lab" width="95%" height="auto">  
 
 <img src="/assets/fortinet/site2site-psk/tunnel2.JPG" alt="Tunnel2 lab" width="95%" height="auto">
 
-Elenco eventi relativi alle VPN (troubleshoot) accessibile da **Log & report** >> **Events** >> **VPN Events**.  
+Elenco degli eventi relativi alle VPN (troubleshoot) accessibile da **Log & report** >> **Events** >> **VPN Events**.  
 
 <img src="/assets/fortinet/site2site-psk/eventi-vpn.JPG" alt="Eventi VPN lab" width="95%" height="auto">
 
