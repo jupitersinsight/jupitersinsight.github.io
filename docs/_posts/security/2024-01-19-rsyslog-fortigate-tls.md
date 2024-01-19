@@ -38,7 +38,7 @@ Prima di tutto generiamo i nostri certificati *self signed* usando XCA.
 All'apertura del programma generiamo subito un database: `File` -> `Nuovo database`.   
 Prima di concludere la creazione del database, XCA ci chiede di inserire una password che sarà poi usata per proteggere le chiavi private generate.
 
-<img src="/assets/xca/psw-prompt.JPG">
+<img src="/assets/xca/psw-prompt.JPG" width="95%" height="auto">
 
 Procediamo quindi alla creazione del certificato CA: `Certificati` -> `Nuovo certificato`.  
 Scegliamo il modello del nuovo certificato, *[default]CA* e poi applichimo le estensioni. 
