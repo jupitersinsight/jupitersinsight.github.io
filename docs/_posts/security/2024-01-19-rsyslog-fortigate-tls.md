@@ -18,7 +18,7 @@ In questo articolo vedremo come configurare l'invio di Log da un Firewall Fortin
 
 #### Prerequisiti:
 - Firewall Fortinet fisico o VM con licenza
-- Un server con rsyslog installato
+- Un server con rsyslog installato (Ultima release di Ubuntu)
 - Un indirizzo IP Pubblico o DNS Dinamico
 - Port-forwarding della porta di ricezione  
 <br>
@@ -41,7 +41,7 @@ Prima di concludere la creazione del database, XCA ci chiede di inserire una pas
 <img src="/assets/xca/psw-prompt.JPG" width="95%" height="auto">
 
 Procediamo quindi alla creazione del certificato CA: `Certificati` -> `Nuovo certificato`.  
-Scegliamo il modello del nuovo certificato, *[default]CA* e poi applichimo le estensioni. 
+Scegliamo il modello del nuovo certificato, *[default]CA* e poi applichiamo le estensioni. 
 
 <img src="/assets/xca/ca_1.JPG" width="95%" height="auto">
 
@@ -142,10 +142,10 @@ tcp_framing="octet-counted"
 ```
 
 Questo esempio di configurazione apre la porta TCP specificata in ascolto per connessioni e tramite il driver *gtls* effettua l'handshake TLS.  
-Nella parte finale è descritta una *action* che permette di inoltrare a un'altro servizio i log ricevuti. 
+Nella parte finale è descritta una *action* che permette di inoltrare a un altro servizio i log ricevuti. 
 
 Da notare che l'opzione **[tcp_framing="octet-counted"](https://www.rsyslog.com/doc/configuration/modules/omfwd.html?highlight=tcp_framing)** è necessaria quando in FortiGate si imposta `mode reliable`.  
-Questa opzione infatti consente a RSYSLOG di suddivedere i pacchetti contenute nel flusso TCP non in base a un delimiter come **LF**, ma in base al campo specificato a inizio pacchetto che contiene appunto la lunghezza dello stesso.
+Questa opzione infatti consente a RSYSLOG di suddivedere i pacchetti contenuti nel flusso TCP non in base a un delimiter come **LF**, ma in base al campo specificato a inizio pacchetto che contiene appunto la lunghezza dello stesso.
 
 Nel mio caso, l'inoltro avviene verso una istanza di **Graylog** che si occupa di effettuare il parsing dei log, suddividerli in indici (in **Wazuh-Indexer**) e di arricchirli con informazioni di geolocalizzazione per creare mappe interattive in **Grafana**.
 
