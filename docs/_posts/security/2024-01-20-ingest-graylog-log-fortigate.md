@@ -1,6 +1,6 @@
 ---
 title: Come configurare il parsing dei log Fortigate in Graylog
-subtitle: Moment-Act Edition
+subtitle: MOMENTACT Edition
 layout: post
 background: '/img/bg-post.jpg'
 categories: networking fortigate log
