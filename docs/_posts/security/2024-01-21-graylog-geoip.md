@@ -41,7 +41,7 @@ $ sudo apt install geoipupdate
 
 Sempre dalla propria area riservata è possibile scaricare un [file di configurazione generico](https://www.maxmind.com/en/accounts/current/license-key/GeoIP.conf) che andrà salvato come `GeoIP.conf` al percorso `/etc/GeoIP.conf`.  
 
-All'interno del file di configurazione bisogna inserire la propia license key.  
+All'interno del file di configurazione bisogna inserire la propria license key.  
 Infine configuriamo un cron job che chiami in automatico geoipupdate, `crontab -e`:
 ```
 33 4 * * 6,4 /usr/local/bin/geoipupdate
@@ -63,7 +63,7 @@ Creiamo infine la `Lookup Table`: `System` -> `Lookup Tables` -> `Lookup Tables`
 
 Giunti a questo punto creiamo una pipeline che processi i nostri log e faccia uso di quanto creato finora: `System` -> `Pipelines` -> `Manage rules`.  
 
-Creaiamo la prima regola, `Create rule`, la nominiamo e inseriamo la seguente regola, appunto:
+Creiamo la prima regola, `Create rule`, la nominiamo e inseriamo la seguente regola, appunto:
 ```
 rule "GeoIP lookup: GeoIP"
 when
@@ -78,12 +78,12 @@ end
 
 Da notare che `<campo da ricercare>` può essere l'indirizzo IP sorgente o destinazione. Nel caso si vogliano geolocalizzare entrambi, si aggiunge una seconda condizione *when* oppure si crea una regola dedicata.  
 
-Tornando nella sezione principale di `System/Pipelines`, aggiungiamo la regola allo `Stage`.  
+Tornando alla sezione principale di `System/Pipelines`, aggiungiamo la regola allo `Stage`.  
 
 <img src="/assets/graylog/geoip_4.JPG" width="75%" height="auto">
 
-Cliccando `Edit Connections` è possibile specificare a quali Stream applicare la regola.
+Cliccando `Edit Connections` è possibile specificare gli Stream a cui applicare la regola.
 
 Se tutto funziona correttamente il risultato finale sarà qualcosa di simile:  
 
-<img src="/assets/graylog/geoip_5.JPG" width="26%" height="auto">
+<img src="/assets/graylog/geoip_5.JPG" width="30%" height="auto">
