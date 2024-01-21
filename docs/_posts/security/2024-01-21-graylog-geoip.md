@@ -6,7 +6,7 @@ background: '/img/bg-post.jpg'
 categories: networking fortigate log
 ---
 
-Che ne direste di geolocalizzare quell'indirizzo IP che tenta di accedere alla vostra VPN?
+Che ne direste di geolocalizzare quell'indirizzo IP che tenta di accedere alla vostra VPN o l'altro, contenuto in una risposta DNS a una query per un dominio che tanto sicuro non sembra?
 
 #### Fonti:
 - [**How to set up Graylog GeoIP configuration**](https://graylog.org/post/how-to-set-up-graylog-geoip-configuration/)
